@@ -83,7 +83,6 @@
 
       // lo que pasa al usar el boton editar del formulario editar
       $("#editar").click(function(mievento) {
-          alert("en editar");
           mievento.preventDefault();
 
           var id_clinica = $("#idClinicaEditar").val();
@@ -113,7 +112,6 @@
               },
               error: function(xhr, status, error) {
                   //mostraríamos alguna ventana de alerta con el error
-                  alert (error);
               },
               success: function(data) {
                   //obtenemos el mensaje del servidor, es un array!!!
@@ -133,15 +131,16 @@
           $("#formularioEditar").fadeOut(100);
           $("#tabla").fadeIn(100);
       });
-      // lo que pasa al usar el boton volver del formulario editar
-      $("#volverEditar").click(function(mievento) {
-          //alert("en volverEditar");
+ // lo que pasa al usar el boton volver del formulario editar
+      $("#volverBorrar").click(function(mievento) {
+          //alert("en volverBorrar");
           mievento.preventDefault();
           // ocultamos un formulario y mostramos el otro
           $("#formularioEditar").fadeOut(100);
           $("#tabla").fadeIn(100);
+
       });
-      // --------BORRAR ------
+            // --------BORRAR ------
       // lo que pasa al usar el botón borrar en cada fila de la tabla 
       $('#miTabla').on('click', '.borrarbtn', function(e) {
           e.preventDefault();
@@ -161,18 +160,20 @@
           $('#cpBorrar').val(aData.cp);
           $('#idTarifaBorrar').val(aData.idTarifa);
       });
+
       // lo que pasa al usar el boton volver del formulario borrar
       $("#volverBorrar").click(function(mievento) {
-          // alert("en volverBorrar");
+          //alert("en volverBorrar");
           mievento.preventDefault();
           // ocultamos un formulario y mostramos el otro
           $("#formularioBorrar").fadeOut(100);
           $("#tabla").fadeIn(100);
+
       });
       // lo que pasa al usar el boton borrar del formulario borrar
       $("#borrar").click(function(mievento) {
-          //alert("en borrar");
           mievento.preventDefault();
+          // alert ("en borrar");
           var id_clinica = $('#idClinicaBorrar').val();
           var nombre = $("#nombreBorrar").val();
           var localidad = $("#localidadBorrar").val();
@@ -218,26 +219,30 @@
           // ocultamos un formulario y mostramos el otro
           $("#formularioBorrar").fadeOut(100);
           $("#tabla").fadeIn(100);
+
       });
-      // --------CREAR CLINICA ------
+   // --------CREAR CLINICA ------
       // lo que pasa al usar el botón nueva clinica 
-      $("#nuevaClinica").click(function(e) {
+      $("#crear").click(function(e) {
+        alert("en crear");
           e.preventDefault();
           $('#tabla').fadeOut(100);
-          $('#formularioCrear').fadeIn(100);
+          alert("en crear1");
+         // $('#formularioCrear').fadeIn(100);
+          alert("en crear2");
       });
+
       // lo que pasa al usar el boton volver del formulario crear
       $("#volverCrear").click(function(mievento) {
-         // alert("en volverCrear");
+          //alert("en volverCrear");
           mievento.preventDefault();
           // ocultamos un formulario y mostramos el otro
           $("#formularioCrear").fadeOut(100);
           $("#tabla").fadeIn(100);
+
       });
-/*                   */
       // lo que pasa al usar el boton crear del formulario crear
       $("#crear").click(function(mievento) {
-        alert ("en crear");
           mievento.preventDefault();
 
           var id_clinica = $("#idClinicaCrear").val();
@@ -267,7 +272,6 @@
               },
               error: function(xhr, status, error) {
                   //mostraríamos alguna ventana de alerta con el error
-                  aler (error);
               },
               success: function(data) {
                   //obtenemos el mensaje del servidor, es un array!!!
@@ -287,10 +291,6 @@
           $("#formularioCrear").fadeOut(100);
           $("#tabla").fadeIn(100);
       });
-
-
-
-/*                 */
   });
 
   /* En http://www.datatables.net/reference/option/ hemos encontrado la ayuda necesaria

@@ -44,8 +44,13 @@ $id_tarifa = $_POST["id_tarifa"];
 //$id_tarifa = 1 ;
 $cif = $_POST["cif"];
 
-/* Consulta UPDATE */
-$query = "UPDATE clinicas SET 
+/* Consulta INSERT */
+/*INSERT INTO `clinicas` (`id_clinica`, `nombre`, `razonsocial`, `cif`, `localidad`, `provincia`, `direccion`, `cp`, `numclinica`, `id_tarifa`) VALUES
+(1, 'CENTRO IMPLANTOLOGICO BARCELONA', 'XX', 'B11111111', 'BARCELONA', 'BARCELONA', 'Avda. Gracia nº 15', '8015', '1', 1)
+*/
+$query = "INSERT INTO clinicas (id_clinica, nombre , razonsocial, cif, localidad, provincia, direccion, cp, numclinica,id_tarifa) VALUES ('" . $id . "', '" . $nombre . "','" . $razonsocial . "','" . $cif . "','" . $localidad . "' ,'" . $provincia . "','" . $direccion . "','" . $cp . "' ,'" . $numclinica . "' ,'" . $id_tarifa . "' )" ;
+error_log("la query ".$query);
+/*$query = "INSERT INTO clinicas SET 
             nombre = '" . $nombre . "', 
             localidad = '" . $localidad . "', 
             provincia = '" . $provincia . "', 
@@ -53,15 +58,16 @@ $query = "UPDATE clinicas SET
             cp = '" . $cp . "',
             id_tarifa = '" . $id_tarifa . "',
             cif = '" . $cif . "'
-            WHERE id_clinica = " . $id;
+            WHERE id_clinica = " . $id;*/
 
 //mysql_query($query, $gaSql['link']) or fatal_error('MySQL Error: ' . mysql_errno());
 /*En función del resultado correcto o no, mostraremos el mensaje que corresponda*/
 $query_res = mysql_query($query);
-error_log ("el quuery_res ".$query_res);
+
 // Comprobar el resultado
 if (!$query_res) {
     $mensaje  = 'Error en la consulta: ' . mysql_error() . "\n";
+    error_log ("El error de la consulta ".$mensaje);
     $estado = mysql_errno();
 }
 else
