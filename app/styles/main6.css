@@ -1,0 +1,15 @@
+td .btn-primary {
+    margin-right: 3px;
+}
+body {
+    magin-top: 50px;
+}
+#formularioEditar {
+    display: none;
+}
+#formularioBorrar {
+    display: none;
+}
+#formularioCrear {
+    display: none;
+}
