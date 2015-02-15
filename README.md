@@ -38,4 +38,3 @@ Para obtener los datos del servidor puedes ayudarte del script que proporciona d
 7. Utiliza ajax para borrar o modificar registros de datatables. Ya sea desde el mismo datatables (botón de borrar) o desde el formulario (botón de editar). Puedes ayudarte de los scripts que proporciono.
 
 8. Implementa los avisos de ajax en el código anterior mediante algún plugin de jQuery de tipo growl. 
-# datatables_servidor 
